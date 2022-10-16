@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdapterDesignePatter.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,9 @@ namespace AdapterDesignePatter
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext=new AppViewModel();
+
+            App.MyCanvas = canvas;
         }
     }
 }

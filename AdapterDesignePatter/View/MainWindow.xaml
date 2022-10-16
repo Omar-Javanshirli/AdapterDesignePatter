@@ -10,18 +10,19 @@
         <StackPanel HorizontalAlignment="Center" Margin="20" Width="300">
 
             <TextBlock Text="Name" FontSize="30"/>
-            <TextBox Height="30"/>
+            <TextBox Height="30" Text="{Binding Human.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Text="Surname" FontSize="30"/>
-            <TextBox Height="30"/>
+            <TextBox Height="30" Text="{Binding Human.Surname}"/>
             <TextBlock Text="Speciality" FontSize="30"/>
-            <TextBox Height="30"/>
+            <TextBox Height="30" Text="{Binding Human.Speciality}"/>
             <Button Content="Clik" FontSize="20" Command="{Binding ClickCommand}"/>
         </StackPanel>
-        <Canvas>
+        
+        <Canvas x:Name="canvas">
             <Label Content="Json" FontSize="20" Canvas.Right="90" Canvas.Top="120"/>
-            <RadioButton  Canvas.Right="150" Canvas.Top="135"/>
-            <Label Content="Xml" FontSize="20" Canvas.Right="90" Canvas.Top="160"/>
-            <RadioButton  Canvas.Right="150" Canvas.Top="175"/>
+            <RadioButton  Canvas.Right="150" Canvas.Top="135" IsChecked="False" Command="{Binding JsonCommand}" x:Name="jsonRb"/>
+            <Label Content="XML" FontSize="20" Canvas.Right="90" Canvas.Top="160"/>
+            <RadioButton  Canvas.Right="150" Canvas.Top="175" IsChecked="False" Command="{Binding XMLCommand}" x:Name="xmlRb"/>
         </Canvas>
     </Grid>
 </Window>
